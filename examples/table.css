@@ -1,0 +1,12 @@
+.myTable {
+    border: 1px grey solid;
+    border-collapse: collapse;
+}
+
+.myTable th,td {
+    border: 1px grey solid;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}

@@ -1,0 +1,15 @@
+.myTable {
+    border: 1px black solid;
+    border-collapse: collapse;
+}
+
+.myTable > tbody > tr > td {
+    border: 1px black solid;
+    width: 130px;
+    height: 60px;
+    vertical-align: top;
+}
+
+.myTable > thead > tr > th {
+    border: 1px black solid;
+}
