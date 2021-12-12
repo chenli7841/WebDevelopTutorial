@@ -65,7 +65,7 @@ function generateTableBody(year, month) {
         tableElement = tableElement + '<td>' + currentDate.getDate();
 
         courses.forEach(c => {
-            tableElement = `${tableElement} <div> ${c.name}: ${c.from}-${c.to}</div>`;
+            tableElement = `${tableElement} <div class='contentLine'> ${c.name}: ${c.from}-${c.to}</div>`;
         });
         tableElement = tableElement + '</td>';
 
@@ -99,6 +99,20 @@ function getUTCFormatDate(year, month, dayOfMonth) {
         outputText = outputText + dayOfMonth;
     }
     return outputText;
+}
+
+function navigate(location) {
+    if (location === 'timetable') {
+        document.getElementById('timetable_section').style.display = '';
+        document.getElementById('acitivites_section').style.display = 'none';
+        document.getElementById('navBar_timetable_button').style.backgroundColor = '#444';
+        document.getElementById('navBar_activities_button').style.backgroundColor = '';
+    } else if (location === 'activities') {
+        document.getElementById('timetable_section').style.display = 'none';
+        document.getElementById('acitivites_section').style.display = '';
+        document.getElementById('navBar_timetable_button').style.backgroundColor = '';
+        document.getElementById('navBar_activities_button').style.backgroundColor = '#444';
+    }
 }
 
 

@@ -3,39 +3,80 @@
         <link rel="stylesheet" href="style.css"> 
     </head>
     <body>
-        <div>
-            <label>Please select the year and month:</label>
-            <select onchange="onSelectYearAndMonth()" id='year_month_select'>
-              <option value="2021-4">April 2021</option>
-              <option value="2021-5">May 2021</option>
-              <option value="2021-6">June 2021</option>
-              <option value="2021-7">July 2021</option>
-              <option value="2021-8">August 2021</option>
-              <option value="2021-9">September 2021</option>
-              <option value="2021-10">October 2021</option>
-              <option selected value="2021-11">November 2021</option>
-              <option value="2021-12">December 2021</option>
-            </select>
-        </div>
-        <br />
-        <div id='new-table-container'>
-            <table class="myTable">
-                <thead>
-                    <tr>
-                        <th>Sunday</th>
-                        <th>Monday</th>
-                        <th>Tuesday</th>
-                        <th>Wednesday</th>
-                        <th>Thursday</th>
-                        <th>Friday</th>
-                        <th>Saturday</th>
-                    </tr>
-                </thead>
-                <tbody id='new-table-body'>
+        <nav class='navBar'>
+            <button id='navBar_timetable_button' onclick="navigate('timetable')" style="background-color: #444;">Timetable</button>
+            <button id='navBar_activities_button' onclick="navigate('activities')">Activities</button>
+        </nav>
+        <section id='timetable_section'>
+            <div>
+                <label>Please select the year and month:</label>
+                <select onchange="onSelectYearAndMonth()" id='year_month_select'>
+                <option value="2021-4">April 2021</option>
+                <option value="2021-5">May 2021</option>
+                <option value="2021-6">June 2021</option>
+                <option value="2021-7">July 2021</option>
+                <option value="2021-8">August 2021</option>
+                <option value="2021-9">September 2021</option>
+                <option value="2021-10">October 2021</option>
+                <option selected value="2021-11">November 2021</option>
+                <option value="2021-12">December 2021</option>
+                </select>
+            </div>
+            <br />
+            <div class='tiemtableTableContainer'>
+                <table class="myTable">
+                    <thead>
+                        <tr>
+                            <th>Sunday</th>
+                            <th>Monday</th>
+                            <th>Tuesday</th>
+                            <th>Wednesday</th>
+                            <th>Thursday</th>
+                            <th>Friday</th>
+                            <th>Saturday</th>
+                        </tr>
+                    </thead>
+                    <tbody id='new-table-body'>
 
-                </tbody>
-            </table>
-        </div>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <section id='acitivites_section' style='display: none'>
+            <div>
+                <label>Please select the year and month:</label>
+                <select onchange="onSelectYearAndMonth()" id='year_month_select'>
+                <option value="2021-4">April 2021</option>
+                <option value="2021-5">May 2021</option>
+                <option value="2021-6">June 2021</option>
+                <option value="2021-7">July 2021</option>
+                <option value="2021-8">August 2021</option>
+                <option value="2021-9">September 2021</option>
+                <option value="2021-10">October 2021</option>
+                <option selected value="2021-11">November 2021</option>
+                <option value="2021-12">December 2021</option>
+                </select>
+            </div>
+            <br />
+            <div id='activities-table-container'>
+                <table class="activitiesTable">
+                    <thead>
+                        <tr>
+                            <th>Sunday</th>
+                            <th>Monday</th>
+                            <th>Tuesday</th>
+                            <th>Wednesday</th>
+                            <th>Thursday</th>
+                            <th>Friday</th>
+                            <th>Saturday</th>
+                        </tr>
+                    </thead>
+                    <tbody id='new-table-body'>
+
+                    </tbody>
+                </table>
+            </div>
+        </section>
         <script src='main.js'></script>
     </body>
 </html>

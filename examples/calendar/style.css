@@ -5,11 +5,38 @@
 
 .myTable > tbody > tr > td {
     border: 1px black solid;
-    width: 130px;
-    height: 60px;
     vertical-align: top;
 }
 
 .myTable > thead > tr > th {
     border: 1px black solid;
+}
+
+.contentLine {
+    padding: 10px 20px 20px 20px
+}
+
+.navBar {
+    background-color: black;
+    height: 60px;
+}
+
+.tiemtableTableContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.navBar > button {
+    background-color: transparent;
+    color: white;
+    border: none;
+    font-size: 24px;
+    line-height: 60px;
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 100%;
+}
+
+body {
+    margin: 0;
 }
