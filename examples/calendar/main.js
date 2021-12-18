@@ -17,20 +17,54 @@ const courses = [
     }
 ]
 
+const acitivites = [
+    {
+        name: "Piano Concert",
+        from: 10,
+        to: 11,
+        date: new Date("2021-12-18")
+    },
+    {
+        name: "Math Exam",
+        from : 13,
+        to: 14,
+        date: new Date("2021-12-20")
+    },
+    {
+        name: "Biology Lab",
+        from : 14,
+        to: 15,
+        date: new Date("2021-12-20")
+    },
+    {
+        name: "Physics Mid-term",
+        from : 10,
+        to: 11,
+        date: new Date("2021-11-05")
+    },
+    {
+        name: "Math Assignments 2 Due",
+        from : 9,
+        to: 10,
+        date: new Date("2021-11-30")
+    }
+]
 
 
-function onSelectYearAndMonth() {
-    let selection = document.getElementById('year_month_select').value;
+
+function onSelectYearAndMonth(selectorId, tableBodyId, page) {
+    let selection = document.getElementById(selectorId).value;
     const parts = selection.split('-')
     const year = parseInt(parts[0]);
     const month = parseInt(parts[1]);
-    const tableElement = generateTableBody(year, month);
-    document.getElementById('new-table-body').innerHTML = tableElement;
+    const tableElement = generateTableBody(year, month, page);
+    document.getElementById(tableBodyId).innerHTML = tableElement;
 }
 
-onSelectYearAndMonth();
+onSelectYearAndMonth('timetable-year-month-select', 'timetable-table-body', 'timetable');
+onSelectYearAndMonth('activities-year-month-select', 'activities-table-body', 'activities');
 
-function generateTableBody(year, month) {
+function generateTableBody(year, month, page) {
     const firstDayOfMonth = new Date(year + "-" + month + "-1");
     let currentDate = firstDayOfMonth;
 
@@ -64,9 +98,18 @@ function generateTableBody(year, month) {
 
         tableElement = tableElement + '<td>' + currentDate.getDate();
 
-        courses.forEach(c => {
-            tableElement = `${tableElement} <div class='contentLine'> ${c.name}: ${c.from}-${c.to}</div>`;
-        });
+        if (page === 'timetable') {
+            courses.forEach(c => {
+                tableElement = `${tableElement} <div class='contentLine'> ${c.name}: ${c.from}-${c.to}</div>`;
+            });
+        } else if (page === 'activities') {
+            acitivites.forEach(a => {
+                activityDate = a.date;
+                if (currentDate.getUTCFullYear() === activityDate.getUTCFullYear() && currentDate.getUTCMonth() === activityDate.getUTCMonth() && currentDate.getUTCDate() === activityDate.getUTCDate()) {
+                    tableElement = `${tableElement} <div class='contentLine'> ${a.name}: ${a.from}-${a.to}</div>`;
+                }
+            });
+        }
         tableElement = tableElement + '</td>';
 
         // end the row when it's Saturday (the last column in a row)

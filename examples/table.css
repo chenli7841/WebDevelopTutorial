@@ -1,9 +1,9 @@
-.myTable {
+.dataTable {
     border: 1px grey solid;
     border-collapse: collapse;
 }
 
-.myTable th,td {
+.dataTable th,td {
     border: 1px grey solid;
     padding-top: 10px;
     padding-bottom: 10px;

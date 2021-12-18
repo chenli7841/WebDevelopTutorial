@@ -7,10 +7,10 @@
             <button id='navBar_timetable_button' onclick="navigate('timetable')" style="background-color: #444;">Timetable</button>
             <button id='navBar_activities_button' onclick="navigate('activities')">Activities</button>
         </nav>
-        <section id='timetable_section'>
+        <section id='timetable_section' class='dataSection'>
             <div>
                 <label>Please select the year and month:</label>
-                <select onchange="onSelectYearAndMonth()" id='year_month_select'>
+                <select onchange="onSelectYearAndMonth('timetable-year-month-select', 'timetable-table-body', 'timetable')" id='timetable-year-month-select'>
                 <option value="2021-4">April 2021</option>
                 <option value="2021-5">May 2021</option>
                 <option value="2021-6">June 2021</option>
@@ -23,8 +23,8 @@
                 </select>
             </div>
             <br />
-            <div class='tiemtableTableContainer'>
-                <table class="myTable">
+            <div class='dataTableContainer'>
+                <table class="dataTable">
                     <thead>
                         <tr>
                             <th>Sunday</th>
@@ -36,16 +36,16 @@
                             <th>Saturday</th>
                         </tr>
                     </thead>
-                    <tbody id='new-table-body'>
+                    <tbody id='timetable-table-body'>
 
                     </tbody>
                 </table>
             </div>
         </section>
-        <section id='acitivites_section' style='display: none'>
+        <section id='acitivites_section' class='dataSection' style='display: none'>
             <div>
                 <label>Please select the year and month:</label>
-                <select onchange="onSelectYearAndMonth()" id='year_month_select'>
+                <select onchange="onSelectYearAndMonth('activities-year-month-select', 'activities-table-body', 'activities')" id='activities-year-month-select'>
                 <option value="2021-4">April 2021</option>
                 <option value="2021-5">May 2021</option>
                 <option value="2021-6">June 2021</option>
@@ -58,8 +58,8 @@
                 </select>
             </div>
             <br />
-            <div id='activities-table-container'>
-                <table class="activitiesTable">
+            <div class='dataTableContainer'>
+                <table class="dataTable">
                     <thead>
                         <tr>
                             <th>Sunday</th>
@@ -71,7 +71,7 @@
                             <th>Saturday</th>
                         </tr>
                     </thead>
-                    <tbody id='new-table-body'>
+                    <tbody id='activities-table-body'>
 
                     </tbody>
                 </table>

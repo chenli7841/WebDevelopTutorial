@@ -1,14 +1,16 @@
-.myTable {
+.dataTable {
     border: 1px black solid;
     border-collapse: collapse;
 }
 
-.myTable > tbody > tr > td {
+.dataTable > tbody > tr > td {
     border: 1px black solid;
     vertical-align: top;
+    min-width: 160px;
+    height: 170px;
 }
 
-.myTable > thead > tr > th {
+.dataTable > thead > tr > th {
     border: 1px black solid;
 }
 
@@ -21,20 +23,29 @@
     height: 60px;
 }
 
-.tiemtableTableContainer {
+.dataSection {
+    padding: 40px;
+}
+
+.dataTableContainer {
     display: flex;
     justify-content: center;
 }
 
 .navBar > button {
     background-color: transparent;
-    color: white;
+    color: #fff;
     border: none;
     font-size: 24px;
     line-height: 60px;
     padding-left: 20px;
     padding-right: 20px;
     height: 100%;
+    cursor: pointer;
+}
+
+.navBar > button:hover {
+    color: #aaa;
 }
 
 body {
